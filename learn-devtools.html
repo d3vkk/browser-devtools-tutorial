@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Donald KK">
+    <title>DevTools Sandbox</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <noscript>Please Enable JavaScript</noscript>
+    <!--LEARNING CHROME DEVELOPER TOOLS USING GOOGLE CHROME v7.3-->
+    <!--
+        'Elements' Tab
+        Displays HTML & CSS and allows for their modification and manipulation
+    -->
+    <h1>DevTools Sandbox</h1>
+
+    <script>
+        /*
+            'Console' Tab
+            Diplays output of Javascript after being processed by the browser
+        */
+        console.log('Hello World!');
+        console.error('This is an error');
+        console.warn('This is a warning');
+        //Directory/map of HTML element of your choice
+        console.dir(document);
+        // For the h1 tag
+        console.dir(document.getElementsByTagName('h1'));
+        //Creating table using array
+        console.table([{
+            name: 'John',
+            email: 'john@gmail.com',
+            age: 30
+        }])
+        //Clearing console
+        // console.clear();
+        //Output information as a group
+        console.group('Hello People');
+        console.log('Hello Person 1');
+        console.log('Hello Person 2');
+        console.log('Hello Person 3');
+        console.groupEnd('Hello People');
+        //Output information as a group but collapse it initially
+        //'Hello People' is the name of the group
+        console.groupCollapsed('Hello People');
+        console.log('Hello Person 1');
+        console.log('Hello Person 2');
+        console.log('Hello Person 3');
+        console.groupEnd('Hello People');
+        console.log('CHECK EDITOR FOR MORE DETAILS');
+        //Tells us the execution time for the code below
+        console.time('For Loop');
+        for (var i = 0; i < 5; i++) {
+            console.log(i);
+        }
+        console.timeEnd('For Loop');
+
+        function greaterThan(x, y) {
+            console.assert(x > y, {
+                "x ": x, "is greater than y ": y
+            });
+            //Message is shown only when assertion fails
+        }
+
+        greaterThan(4,5);
+
+        /*
+            'Sources' Tab
+            1. Create and run snippets e.g. placing console.log('Code Snippet'); inside a created snippet named 'log.js'
+            2. Use it as a text editor by adding your project folder to the workspace
+        */
+
+        /*
+            'Network' Tab
+            Provides loading times for project files
+
+            Note:
+            XHR - XML Http Requests i.e. AJAX Requests
+            Doc - e.g. HTML Files
+            WS - Web Socket
+            Headers - Connection details e.g. request method
+        */
+
+        /*
+            'Application' Tab
+            Specifically under 'Storage'
+
+            Local Storage: stores information even after the browser is closed
+            Sessio Storage: stores information that is deleted once the browser is closed/session ends
+            IndexedDB: In-Browser Database
+            Web SQL: Deprecated In-Browser Database
+            Cookies: Dispalyes stored cookies
+        */
+
+        //For inserting in Local Storage
+        localStorage.setItem('name', 'John');
+        //Displays Local Storage data
+        //console.log(localStorage.getItem('name'));
+        //Clears storage
+        //localStorage.clear('name');
+
+        //For inserting in Session Storage
+        sessionStorage.setItem('car','BMW');
+
+        //For inserting cookies
+        document.cookie = "username=John Doe"
+
+        /*
+            'Audits' Tab (Website needs to be hosted)
+            1. Perform audits on your website according to the current website standards & best practices.
+            2. It gives a rating out of 100% plus suggestions on how to improve your website.
+            3. Where you're hosting also has to be considered as slower servers mean slower loading time
+        */
+    </script>
+</body>
+
+</html>
